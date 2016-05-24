@@ -1,0 +1,19 @@
+<ion-view>
+	<ion-nav-buttons side="right" ng-show="false">
+		<a class="button button-icon button-clear" href="#/tab/subject/{{ subject._id }}/enroll"><i class="icon ion-plus-round"></i></a>
+	</ion-nav-buttons>
+	<ion-nav-title>{{ subject.name }}</ion-nav-title>
+	<ion-content class="padding">
+		<ion-list ng-if="students.length">
+			<ion-item href="#/tab/student/{{ student._id }}" ng-repeat="student in students | orderBy:'name' | filter:searchText" class="item item-icon-right">
+				<h2 class="title">{{student.name}}</h2>
+				<i class="icon ion-arrow-right-b"></i>
+			</ion-item>
+		</ion-list>
+		<ion-list ng-show="!students.length">
+			<ion-item>
+				<h2 class="title">No students available at this time.</h2>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

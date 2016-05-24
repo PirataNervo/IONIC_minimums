@@ -1,0 +1,17 @@
+<ion-view>
+	<ion-nav-title>Enroll Student</ion-nav-title>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Student:
+				</div>
+				<select ng-options="student as student.name for student in allstudents track by student._id" ng-model="formStudent" style="width: 100%" ng-change="selectUpdated(formStudent)"></select>
+			</label>
+		</div>
+		
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="enrollStudent()">Enroll</button>
+		</div>
+	</ion-content>
+</ion-view>

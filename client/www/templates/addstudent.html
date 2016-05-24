@@ -1,0 +1,26 @@
+<ion-view>
+	<ion-nav-title>Add Student</ion-nav-title>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Name</span>
+				<input type="text" placeholder="Name" ng-model="student.name">
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Address</span>
+				<input type="text" placeholder="Address" ng-model="student.address">
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Home Phone #</span>
+				<input type="text" placeholder="Home Phone #" ng-model="student.homeNumber">
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Mobile Phone #</span>
+				<input type="text" placeholder="Mobile Phone #" ng-model="student.mobileNumber">
+			</label>
+		</div>
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="addStudent()">Add</button>
+		</div>
+	</ion-content>
+</ion-view>

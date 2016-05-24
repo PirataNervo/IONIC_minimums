@@ -1,0 +1,24 @@
+<ion-view view-title="Students">
+	<ion-nav-buttons side="right" ng-show="false">
+		<a class="button button-icon button-clear" href="#/tab/students/add"><i class="icon ion-plus-round"></i></a>
+	</ion-nav-buttons>
+	<ion-content class="padding">
+		<div class="list list-inset">
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Search students" ng-model="searchText">
+			</label>
+		</div>
+		<ion-list>
+			<ion-item ng-repeat="student in students | orderBy:'name' | filter:searchText" ng-if="students.length!==0" class="item">
+				<h2 class="title">{{student.name}}<h2/>
+				<p>Address: {{student.address}}<p/>
+				<p>Mobile #:{{student.mobile}}<p/>
+				<p>Home #:{{student.home}}<p/>
+			</ion-item>
+			<ion-item ng-if="students.length===0">
+				No students available at this time.
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
